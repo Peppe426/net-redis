@@ -9,12 +9,12 @@ namespace Redis.Stream.Producer;
 
 public class Producer<T> : IProducer<T> where T : struct
 {
-    private RedisConfiguration _configuration;
+    private ProducerConfiguration _configuration;
     private ConnectionMultiplexer _redisConnection { get; set; }
 
     public Producer(string connectionString, int port, string key, string streamField)
     {
-        _configuration = new RedisConfiguration(connectionString, port, key, streamField);
+        _configuration = new ProducerConfiguration(connectionString, port, key, streamField);
     }
     private async Task<(bool isSuccess, ConnectionMultiplexer? connection)> Connect()
     {
