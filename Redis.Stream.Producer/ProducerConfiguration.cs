@@ -1,8 +1,8 @@
 ﻿namespace Redis.Stream.Producer;
 
-public class RedisConfiguration
+public class ProducerConfiguration
 {
-    public RedisConfiguration(string connectionString, int port, string key, string streamField)
+    public ProducerConfiguration(string connectionString, int port, string key, string streamField)
     {
         ConnectionString = connectionString;
         Port = port;
