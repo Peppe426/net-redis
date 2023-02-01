@@ -9,7 +9,7 @@ public class ProducerTests
     public async Task ShouldEmitEntryToRedisStream()
     {
         //Given
-        Producer<Entry> producer = new Producer<Entry>("127.0.0.1", 1337, "test", "message");
+        Producer<Entry> producer = new Producer<Entry>("127.0.0.1", 6379, "test", "message");
         Entry entry = new Entry("This is a test message");
         //When
         var output = await producer.EmitEntryToStream(entry);
